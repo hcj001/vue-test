@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,18 +7,20 @@
 </head>
 <body>
   <div id="vue_test">
-    <h1>当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其 data 对象中能找到的所有的属性。当这些属性的值发生改变时，html 视图将也会产生相应的变化。</h1>
-    <h1>site :{{site}}</h1>
-    <h1>url:{{url}}</h1>
-    <h1>alexa:{{alexa}}</h1>
+    {{5+5}}<br>
+    {{ ok ? 'YES' : 'NO' }}<br>
+    {{ message.split('').reverse().join('') }}
+    <div v-bind:id="'list-'+id">菜鸟教程</div>
   </div>
 </body>
 <script type="text/javascript">
-  // 我们的数据对象
-  var data = { site: "菜鸟教程", url: "www.runoob.com", alexa: 10000}
   var vm = new Vue({
     el:"#vue_test",
-    data: data
+    data: {
+      ok: false,
+      message: 'baidu',
+      id : 1
+    }
   })
   document.write(vm.site===data.site);
   document.write("<br/>");

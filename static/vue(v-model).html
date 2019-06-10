@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+   
+</head>
+<body>
+  <div id="vue_test">
+    <p>{{message}}</p>
+    <input v-model="message"/>
+  </div>
+</body>
+<script type="text/javascript">
+  new Vue({
+    el:"#vue_test",
+    data : {
+      message : "Runoob！"
+    }
+  })
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+指令是带有 v- 前缀的特殊属性。
+
+指令用于在表达式的值改变时，将某些行为应用到 DOM 上:
+  <div id="vue_test">
+    <p v-if="seen">可以看见我</p>
+    <template v-if="ok">
+      <h1>菜鸟教程</h1>
+      <p>学的不仅仅技术</p>
+      <p>哈哈</p>
+    </template>
+  </div>
+</body>
+<script type="text/javascript">
+  var vm = new Vue({
+    el:"#vue_test",
+    data: {
+      seen:true,
+      ok: true
+    }
+  })
+</script>
+</html>

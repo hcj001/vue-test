@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+  <div id="vue_test">
+    <div v-html="message"></div>
+  </div>
+</body>
+<script type="text/javascript">
+  // 我们的数据对象
+  var data = { site: "菜鸟教程", url: "www.runoob.com", alexa: 10000}
+  var vm = new Vue({
+    el:"#vue_test",
+    data: {
+      message : "<h1>这是v-html指令,将html填充到div</h1>"
+    }
+  })
+
+
+</script>
+</html>
