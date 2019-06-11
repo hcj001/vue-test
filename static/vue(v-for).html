@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+
+</head>
+<body>
+  <div id="vue1">
+    <ol>
+      <li v-for="(obj,index) in list">
+        {{index}}:{{obj.name}}
+      </li>
+    </ol>
+  </div>
+  <div id="vue2">
+    <ul>
+      <template v-for="obj in list">
+        <li>{{obj.name}}</li>
+        <li>-----------</li>
+      </template>
+    </ul>
+  </div>
+<div id="vue3">
+  <li v-for="value in Object">
+    {{value}}
+  </li>
+</div>
+  <div id="vue4">
+    <li v-for="(value,key) in Object">
+      {{key}}:{{value}}
+    </li>
+  </div>
+  <div id="vue5">
+    <li v-for="(value,key,index) in Object">
+      {{index}}.{{key}}:{{value}}
+    </li>
+  </div>
+  <div id="vue6">
+    <ul>
+      <li v-for="n in 10">
+        {{ n }}
+      </li>
+    </ul>
+  </div>
+</body>
+<script type="text/javascript">
+  // 我们的数据对象
+  var vm = new Vue({
+    el:"#vue1",
+    data: {
+     list : [
+       {name:'baidu'},
+       {name:'google'},
+       {name:'sougou'}
+     ]
+    }
+  })
+new Vue({
+  el:"#vue2",
+  data: {
+    list : [
+      {name:'baidu'},
+      {name:'google'},
+      {name:'sougou'}
+    ]
+  }
+})
+new Vue({
+  el:"#vue3",
+  data: {
+    Object: {
+      name: '菜鸟教程',
+      url: 'http://www.runoob.com',
+      solgan: '学的不仅是技术，更是梦想！'
+    }
+  }
+})
+  new Vue({
+    el:"#vue4",
+    data: {
+      Object: {
+        name: '菜鸟教程',
+        url: 'http://www.runoob.com',
+        solgan: '学的不仅是技术，更是梦想！'
+      }
+    }
+  })
+  new Vue({
+    el:"#vue5",
+    data: {
+      Object: {
+        name: '菜鸟教程',
+        url: 'http://www.runoob.com',
+        solgan: '学的不仅是技术，更是梦想！'
+      }
+    }
+  })
+  new Vue({
+    el:"#vue6"
+  })
+</script>
+</html>

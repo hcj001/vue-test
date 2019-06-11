@@ -9,6 +9,7 @@
 指令是带有 v- 前缀的特殊属性。
 
 指令用于在表达式的值改变时，将某些行为应用到 DOM 上:
+v-else 、v-else-if 必须跟在 v-if 或者 v-else-if之后。
   <div id="vue_test">
     <p v-if="seen">可以看见我</p>
     <template v-if="ok">
@@ -17,6 +18,31 @@
       <p>哈哈</p>
     </template>
   </div>
+  <div id="vue2">
+    <div v-if="Math.random() > 0.5">
+      大于0.5
+    </div>
+    <div v-else>
+      小于等于0.5
+    </div>
+  </div>
+  <div id="vue3">
+    <div v-if="type === 'A'">
+      A
+    </div>
+    <div v-else-if="type === 'B'">
+      B
+    </div>
+    <div v-else>
+      Not A/B
+    </div>
+    <input v-model="type">
+    <p>{{type}}</p>
+  </div>
+  <div id="vue4">
+    <input v-model="ok"/>
+    <div v-show="ok">v-show test</div>
+  </div>
 </body>
 <script type="text/javascript">
   var vm = new Vue({
@@ -24,6 +50,21 @@
     data: {
       seen:true,
       ok: true
+    }
+  })
+  new Vue({
+    el:"#vue2"
+  })
+  var vue3 = new Vue({
+    el:"#vue3",
+    data: {
+      type: "C"
+    }
+  })
+  new Vue({
+    el:"#vue4",
+    data : {
+      ok :false
     }
   })
 </script>
